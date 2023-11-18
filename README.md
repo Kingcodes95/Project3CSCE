@@ -5,7 +5,10 @@ Due December 3rd
 
 **November 18th 1:13 AM:**
 Started Project, but just did basic Github testing to understand things! I will probably fully  
-start the project during ThanksGiving Break!
+start the project during ThanksGiving Break!  
+  
+**November 18th 1:41 AM:**
+Added enum for the menu and also created the student struct
 
 
 
