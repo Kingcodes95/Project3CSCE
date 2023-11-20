@@ -8,9 +8,19 @@ int choice = Results;
 
 struct Student {
     string nameStudent;
-    int student_ID, tests_Taken;
-    //pointer for dynamic array RIGHT HERE
+    int student_ID;
+    size_t testsTaken;
+    int* testsArray;
     int avgScores;
+
+    // makes the dynamic Array
+    Student(size_t size) : testsTaken(size) {
+        testsArray = new int[size];
+    }
+    //Deletes the extra space in the array thats not needed 
+    ~Student() {
+        delete[] testsArray;
+    }
 };
 
 void add_Student() {
@@ -35,6 +45,20 @@ void export_Results() {
 
 int main()
 {
+    Student arrayInstance(5);
+    arrayInstance.testsTaken = getNumber();
+
+    //Manipulates the array
+    for (size_t i = 0; i < arrayInstance.testsTaken; i++) {
+        //This is just to test the array so it multiplys all by 2
+        arrayInstance.testsArray[i] = i * 2;
+    }
+    //Prints the elements
+    for (size_t i = 0; i < arrayInstance.testsTaken; i++) {
+        cout << arrayInstance.testsArray[i] << '\t';
+    }
+    
+    cout << endl;
     cout << "1. Add" << endl;
     cout << "2. Remove" << endl;
     cout << "3. Display" << endl;
@@ -62,7 +86,6 @@ int main()
             break;
 
         case Results:
-            getNumber();
             export_Results();
             break;
 

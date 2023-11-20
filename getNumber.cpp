@@ -22,5 +22,6 @@ int getNumber() {
     }
     fin.close();
     cout << "Working" << endl;
+    cout << count << endl;
     return(count);
 }
