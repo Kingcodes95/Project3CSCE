@@ -12,7 +12,11 @@ Added enum for the menu and also created the student struct
   
 **November 18th 9:32 AM:**
 Added all the functions(Functions aren't completed just the mainframe is added),  
-and started slowly building the interface!
+and started slowly building the interface!  
+  
+**November 19th 9:02 PM:**
+Added Rap0249.h, student.dat, and getNumber.cpp! I feel like the getNumber.cpp function isn't doing what it's suppose to but I  
+think i need to recode it and fix it with pointers in order for it to return the correct count
 
 
 

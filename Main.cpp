@@ -1,3 +1,4 @@
+#include "Rap0249.h"
 #include <iostream>
 using namespace std;
 
@@ -61,6 +62,7 @@ int main()
             break;
 
         case Results:
+            getNumber();
             export_Results();
             break;
 
