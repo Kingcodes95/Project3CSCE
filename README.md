@@ -16,7 +16,11 @@ and started slowly building the interface!
   
 **November 19th 9:02 PM:**
 Added Rap0249.h, student.dat, and getNumber.cpp! I feel like the getNumber.cpp function isn't doing what it's suppose to but I  
-think i need to recode it and fix it with pointers in order for it to return the correct count
+think i need to recode it and fix it with pointers in order for it to return the correct count  
+
+**November 19th 10:53 PM:**
+Added Dynamic array, and fixed testTaken count to give array size based off test numbers  
+// Might have to re fix, i think i made the number of people in the file the count for tests and thata incorrect.
 
 
 
