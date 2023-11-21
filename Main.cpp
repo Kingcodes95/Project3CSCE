@@ -1,29 +1,46 @@
 #include "Rap0249.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 int number_of_students = 5;
 enum choices {Add = 1, Remove = 2, Display = 3, Search = 4, Results = 5, Quit = 6};
 int choice = Results;
+ifstream file("student.dat");
 
 struct Student {
     string nameStudent;
     int student_ID;
-    size_t testsTaken;
-    int* testsArray;
+    int testsTaken;
+    int* testsArray = new int [getNumber()]; //change something here cause it won't put everything in the array cause size too small
     int avgScores;
 
-    // makes the dynamic Array
-    Student(size_t size) : testsTaken(size) {
-        testsArray = new int[size];
-    }
     //Deletes the extra space in the array thats not needed 
     ~Student() {
         delete[] testsArray;
     }
 };
 
-void add_Student() {
+void add_Student(Student& studentInstance) {
+    cout << "What is your First, Middle, and Last name";
+    getline(cin, studentInstance.nameStudent); // student Last name
+    
+    cout << "Please enter your student ID";
+    cin >> studentInstance.student_ID; // for the student ID 
+
+    ifstream file("student.dat");
+    file.open("student.dat");
+
+    if (!file.is_open()) {
+        cout << "File did not open" << endl;
+        exit(1);
+    }
+
+    for (int i = 0; i < studentInstance.testsTaken; i++) {
+        //Need to write code to change variables number in the actual file.
+    }
+
+
     cout << "Add (Function not complete)" << endl;
 }
 
@@ -45,18 +62,22 @@ void export_Results() {
 
 int main()
 {
-    Student arrayInstance(5);
-    arrayInstance.testsTaken = getNumber();
+    Student studentInstance;
+    ifstream file("student.dat");
 
-    //Manipulates the array
-    for (size_t i = 0; i < arrayInstance.testsTaken; i++) {
-        //This is just to test the array so it multiplys all by 2
-        arrayInstance.testsArray[i] = i * 2;
+    file.open("student.dat");
+
+    if (!file.is_open()) {
+        cout << "File is not open" << endl;
+        exit(1);
     }
-    //Prints the elements
-    for (size_t i = 0; i < arrayInstance.testsTaken; i++) {
-        cout << arrayInstance.testsArray[i] << '\t';
+
+    if(file.is_open()) {
+        string myChar;
+        myChar = file.get();
+        cout << myChar;
     }
+
     
     cout << endl;
     cout << "1. Add" << endl;
@@ -70,7 +91,7 @@ int main()
 
     switch (choice) {
         case Add:
-            add_Student();
+            add_Student(studentInstance);
             break;
 
         case Remove:
